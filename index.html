@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EV3 Page</title>
+<style>
+  .topbar { border: 1px solid black; padding: 2px; }
+  .topbar h3, .topbar p { display: inline; margin: 0; }
+  .note { font-style: italic; font-size: small; }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <h3>Test</h3> <vr> <p>unclickable button</p>
+  </div>
+  <hr>
+  <p id="counter">Counter: 0</p>
+  <p class="note">Left/Right change the counter. Scroll with Up/Down. Press Center to exit.</p>
+
+  <script>
+    var count = 0;
+    var counterEl = document.getElementById('counter');
+
+    function renderCounter() {
+      counterEl.textContent = 'Counter: ' + count;
+      counterEl.style.color = count < 0 ? 'red' : 'black';
+    }
+
+    EV3.onButton('right', function () {
+      count++;
+      renderCounter();
+    });
+    EV3.onButton('left', function () {
+      count--;
+      renderCounter();
+    });
+
+    renderCounter();
+  </script>
+</body>
+</html>

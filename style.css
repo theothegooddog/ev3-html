@@ -1,0 +1,12 @@
+/* External stylesheet, loaded alongside any inline <style> block in index.html */
+body {
+  margin: 0;
+}
+
+p {
+  margin: 3px 0;
+}
+
+.box {
+  background-color: white;
+}
